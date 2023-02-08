@@ -34,14 +34,18 @@ def main():
 
     data_helper.dump_yaml(vars(args), model_dir / 'args.yml')
 
+    print('training started')
     for split_path in args.splits:
+        print('split_path',split_path)
         split_path = Path(split_path)
         splits = data_helper.load_yaml(split_path)
+        # print(splits)
 
         results = {}
         stats = data_helper.AverageMeter('fscore')
 
         for split_idx, split in enumerate(splits):
+            print('split_idx',split_idx)
             logger.info(f'Start training on {split_path.stem}: split {split_idx}')
             ckpt_path = data_helper.get_ckpt_path(model_dir, split_path, split_idx)
             fscore = trainer(args, split, ckpt_path)
