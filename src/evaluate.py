@@ -3,8 +3,7 @@ from pathlib import Path
 
 import numpy as np
 import torch
-
-from helpers import init_helper, data_helper, vsumm_helper, bbox_helper
+from helpers import bbox_helper, data_helper, init_helper, vsumm_helper
 from modules.model_zoo import get_model
 
 logger = logging.getLogger()

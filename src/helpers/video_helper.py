@@ -4,12 +4,11 @@ from pathlib import Path
 import cv2
 import numpy as np
 import torch
-from PIL import Image
-from numpy import linalg
-from torch import nn
-from torchvision import transforms, models
-
 from kts.cpd_auto import cpd_auto
+from numpy import linalg
+from PIL import Image
+from torch import nn
+from torchvision import models, transforms
 
 
 class FeatureExtractor(object):
